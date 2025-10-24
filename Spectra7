@@ -1,0 +1,56 @@
+graph TD
+    subgraph "Niveau 5 - Apps Spectra"
+        A[📱 App Flutter] --> F[API Gateway]
+        B[🌐 Web App React] --> F
+        C[🖥️ Dashboard Admin] --> F
+        D[🚗 SDK Véhicules] --> F
+    end
+
+    subgraph "Niveau 4 - Services Spectra"
+        F --> G[Service Mesh]
+        G --> H[Auth Service JWT]
+        G --> I[User Profile Service]
+        G --> J[Payment Service SPT]
+        G --> K[Alert Service]
+        G --> L[Map Service]
+        G --> M[Community Service]
+    end
+
+    subgraph "Niveau 3 - Métier Spectra"
+        N[Domain: Mobilité A7] --> P[Microservice Signalements]
+        N --> Q[Microservice Covoiturage]
+        N --> R[Microservice Blockchain]
+        N --> S[Microservice IA Trafic]
+        
+        P --> T[Event: NouveauSignalement]
+        Q --> T
+        R --> U[Event: TransactionSPT]
+        S --> V[Event: PredictionTrafic]
+    end
+
+    subgraph "Niveau 2 - Data Spectra"
+        T --> W[Redis: Cache Temps-Réel]
+        U --> X[PostgreSQL: Données Utilisateurs]
+        V --> Y[TimescaleDB: Données Trafic]
+        P --> Z[Elasticsearch: Recherche]
+        R --> AA[MongoDB: Logs Blockchain]
+    end
+
+    subgraph "Niveau 1 - Infra Spectra"
+        W --> FF[Kubernetes AKS/EKS]
+        X --> FF
+        Y --> FF
+        Z --> FF
+        
+        FF --> GG[Istio Service Mesh]
+        GG --> HH[Prometheus: Métriques]
+        GG --> II[ELK: Logs]
+        GG --> JJ[Jaeger: Traces]
+    end
+
+    subgraph "Niveau 0 - Sécurité Spectra"
+        KK[Zero Trust] --> F
+        LL[mTLS] --> G
+        MM[WAF Cloudflare] --> N
+        NN[Vault: Secrets] --> FF
+    end
