@@ -1,0 +1,264 @@
+# SPECTRA - APPLICATION COMPLÈTE
+
+## 1. 📄 README.md
+```markdown
+# 🚀 Spectra - Mobilité Intelligente A7
+
+## 🎯 Vision
+Application communautaire pour les usagers de l'autoroute A7
+
+## 🛣️ Focus
+Lille → Paris → Lyon → Marseille → Barcelone → Algéciras
+
+## 🚀 Fonctionnalités
+- 🛡️ Sécurité intelligente
+- 👥 Réseau communautaire  
+- 📦 Covoiturage colis
+- 💰 Tokens SPT
+
+## 🛠️ Stack Technique
+- Flutter 3.0 (Mobile)
+- Node.js + Express (Backend)
+- Solana (Blockchain)
+- PostgreSQL (Base de données)
+
+## 📞 Contact
+hello@spectra-mobility.com
+name: spectra_app
+description: "Application de mobilité communautaire A7"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.2.3
+  geolocator: ^11.0.1
+  http: ^1.1.0
+  provider: ^6.1.1
+  web3dart: ^4.1.1
+  solana: ^0.2.1
+  flutter_secure_storage: ^9.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+{
+  "name": "spectra-backend",
+  "version": "1.0.0",
+  "description": "Backend pour Spectra A7",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "redis": "^4.6.7",
+    "@solana/web3.js": "^1.87.6",
+    "socket.io": "^4.7.4",
+    "axios": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+# Code de Conduite Spectra
+
+## Notre Engagement
+Nous maintenons un environnement respectueux et accueillant.
+
+## Comportements Attendus
+- Respect mutuel
+- Collaboration constructive
+- Empathie envers les autres
+
+## Signalement
+Contact: hello@spectra-mobility.com
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectra - Mobilité Intelligente A7</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        h1 { font-size: 3em; margin-bottom: 20px; }
+        p { font-size: 1.2em; margin-bottom: 30px; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Spectra</h1>
+        <p>L'application qui révolutionne la mobilité sur l'A7</p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🛡️ Sécurité</h3>
+                <p>Alertes temps réel</p>
+            </div>
+            <div class="feature">
+                <h3>👥 Communauté</h3>
+                <p>Réseau d'entraide</p>
+            </div>
+            <div class="feature">
+                <h3>📦 Services</h3>
+                <p>Covoiturage colis</p>
+            </div>
+        </div>
+
+        <a href="https://github.com/spectra-mobility/spectra-app" 
+           style="color: white; text-decoration: underline;">
+           Voir sur GitHub
+        </a>
+    </div>
+</body>
+</html>
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: spectra
+      POSTGRES_USER: spectra
+      POSTGRES_PASSWORD: spectra123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(SpectraApp());
+}
+
+class SpectraApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Spectra A7',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Spectra A7'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.directions_car, size: 80, color: Colors.blue),
+            SizedBox(height: 20),
+            Text(
+              'Bienvenue sur Spectra',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'L\'application communautaire A7',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Commencer'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+// Route de test
+app.get('/', (req, res) => {
+  res.json({ 
+    message: '🚀 Spectra API - Mobilité A7',
+    version: '1.0.0',
+    status: 'Actif'
+  });
+});
+
+// Route pour les signalements
+app.post('/api/reports', (req, res) => {
+  const { type, location, description } = req.body;
+  res.json({ 
+    success: true, 
+    message: 'Signalement reçu',
+    data: { type, location, description }
+  });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Spectra server running on port ${PORT}`);
+});
